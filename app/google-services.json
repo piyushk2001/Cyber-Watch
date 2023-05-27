@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "306866444560",
+    "firebase_url": "https://cyberwatch-57fe1-default-rtdb.firebaseio.com",
+    "project_id": "cyberwatch-57fe1",
+    "storage_bucket": "cyberwatch-57fe1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306866444560:android:d1371b721e71bffef42d95",
+        "android_client_info": {
+          "package_name": "eu.tutorials.cyberwatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306866444560-g21dpa4nl1t9elc5dk0n4i1aforjqfol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjNtpBwGpq-xdpGEvgbmGnLc72YpVonKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306866444560-g21dpa4nl1t9elc5dk0n4i1aforjqfol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
