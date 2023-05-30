@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity() {
         // Delay showing the chat message for 1 second (1000 milliseconds)
         chatbotIcon.postDelayed({
             showChatMessage()
-        }, 1000)
+        }, 800)
     }
 
     private fun showChatMessage() {
