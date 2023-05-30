@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="identity_options">
+        <item>Identity</item>
+        <item>ID No</item>
+        <item>Aadhar No</item>
+        <item>PAN No</item>
+        <item>Passport</item>
+    </string-array>
+</resources>
