@@ -47,27 +47,57 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/userType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1.3"
+                    android:entries="@array/designation"
+                    android:textSize="17dp" />
+                <Spinner
+                    android:id="@+id/specialite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1.3"
+                    android:entries="@array/specialist_type"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Full Name"
-                    android:layout_weight="0"
                     android:layout_marginRight="57dp"
-                    android:textSize="17dp"
-                    />
+                    android:layout_weight="0"
+                    android:text="Full Name"
+                    android:textSize="17dp" />
 
                 <EditText
                     android:id="@+id/fullNameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your full name"
-                    android:textSize="17dp"
-                    android:padding="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/back"
-                    android:layout_weight="1" />
+                    android:hint="Enter your full name"
+                    android:padding="10dp"
+                    android:textSize="17dp" />
 
             </LinearLayout>
 
@@ -89,7 +119,7 @@
                     android:id="@+id/phoneNumberEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your phone number"
+                    android:hint="Enter your ph no"
                     android:textSize="17dp"
                     android:padding="10dp"
                     android:background="@drawable/back"
@@ -125,58 +155,65 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <!--LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Occupation"
                     android:layout_marginRight="51dp"
-                    android:textSize="17dp"
-                    android:layout_weight="0" />
+                    android:layout_weight="0"
+                    android:text="Occupation"
+                    android:textSize="17dp" />
 
                 <EditText
                     android:id="@+id/occupationEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your occupation"
-                    android:textSize="17dp"
-                    android:padding="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/back"
-                    android:layout_weight="1" />
+                    android:hint="Enter your occupation"
+                    android:padding="10dp"
+                    android:textSize="17dp" />
 
-            </LinearLayout>
+            </LinearLayout-->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
-                <Spinner
-                    android:id="@+id/identitySpinner"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:entries="@array/identity_options"
-                    android:layout_weight="1.3"
-                    android:textSize="17dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="69dp"
+                    android:layout_weight="0"
+                    android:text="Aadhaar"
+                    android:textSize="17dp" />
 
                 <EditText
                     android:id="@+id/identityNumberEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your identity number"
-                    android:textSize="17dp"
-                    android:padding="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/back"
-                    android:layout_weight="1" />
+                    android:hint="Enter your aadhaar no"
+                    android:padding="10dp"
+                    android:textSize="17dp" />
 
             </LinearLayout>
+
+
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="wrap_content"

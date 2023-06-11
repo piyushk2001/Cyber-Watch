@@ -7,4 +7,13 @@
         <item>PAN No</item>
         <item>Passport</item>
     </string-array>
+    <string-array name="designation">
+        <item>Lawyer</item>
+        <item>Client</item>
+    </string-array>
+    <string-array name="specialist_type">
+        <item>Data Theft</item>
+        <item>Cyber Stalking</item>
+        <item>Hacking</item>
+    </string-array>
 </resources>

@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
                     Toast.makeText(this, "Successfully signed up!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, ProfileActivity::class.java)
+                    val intent = Intent(this, FirstSignUpActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
