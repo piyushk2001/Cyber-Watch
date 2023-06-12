@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var signupTextView: TextView
     private lateinit var forgotpasswordText: TextView
+    private lateinit var headingText : TextView
     private var isSignupMode = false
     private lateinit var auth: FirebaseAuth
 
@@ -29,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.login_button)
         signupTextView = findViewById(R.id.signUpRedirectText)
         forgotpasswordText = findViewById(R.id.forgot_password)
+        headingText = findViewById(R.id.loginText)
         auth = FirebaseAuth.getInstance()
 
         loginButton.setOnClickListener {
@@ -85,6 +87,7 @@ class LoginActivity : AppCompatActivity() {
         if (isSignupMode) {
             loginButton.text = "Sign Up"
             signupTextView.text = "Already have an account? Log in"
+            headingText.text="Sign Up"
             //forgotpasswordText.visibility = View.INVISIBLE
             isSignupMode = true
 
