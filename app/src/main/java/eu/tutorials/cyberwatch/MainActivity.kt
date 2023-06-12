@@ -25,11 +25,11 @@ class MainActivity : AppCompatActivity() {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
-                val currentUser = FirebaseAuth.getInstance().currentUser
+                /*val currentUser = FirebaseAuth.getInstance().currentUser
                 if (currentUser != null) {
                     // User is signed in, log them out
                     FirebaseAuth.getInstance().signOut()
-                }
+                }*/
                 navigateToHome()
             }
 
