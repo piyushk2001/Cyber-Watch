@@ -1,228 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context=".HomeActivity"
-    >
+    android:fitsSystemWindows="true"
+    tools:context=".ProfileActivity">
 
-        <!-- Action Bar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/blue"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="#fff"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/baseline_arrow_back_24" />
-
+            android:src="@drawable/baseline_edit_24" />
         <TextView
-            android:id="@+id/titleTextView"
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:layout_gravity="center" />
-
+            android:text="My Profile"
+            android:textColor="@android:color/white"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_gravity="center"
+            />
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Form Layout -->
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="323dp"
+        android:layout_height="322dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141"
+        app:srcCompat="@drawable/usericon" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/toolbar"
-        android:gravity="center"
-        android:padding="16dp">
+        android:layout_height="470dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="114dp"
+            app:srcCompat="@drawable/baseline_call_24" />
 
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:id="@+id/profile_pic"
-                android:src="@drawable/usericon"
-                />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="157dp"
+            app:srcCompat="@drawable/baseline_email_24" />
 
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="208dp"
+            app:srcCompat="@drawable/baseline_location_on_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:text="My name"
+            android:textColor="#000"
+            android:textSize="24sp" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userPhone"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="74dp"
+            android:layout_marginLeft="74dp"
+            android:layout_marginTop="116dp"
+            android:text="+212 (0) 5 37 64 95 15"
+            android:textColor="#B9B9B9"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="160dp"
+            android:text="dr.yamine@gmail.com"
+            android:textColor="#B9B9B9"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userAddress"
+            android:layout_width="284dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="204dp"
+            android:text="Dr Yassmine Alaoui Pédiatre, 11 Avenue Al Abtal, Rabat"
+            android:textColor="#B9B9B9"
+            android:textSize="16sp" />
+
         <Button
-            android:id="@+id/uploadPfpBtn"
+            android:id="@+id/signOutBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Upload profile pic"
-            android:layout_alignParentBottom="true"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="40dp"
-                android:layout_weight="0"
-                android:text="Full Name  :"
-                android:textSize="17dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:background="@drawable/back"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:id="@+id/userName"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:text="Your name is here"
-                android:textSize="17dp" />
+            android:background="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="150dp"
+            android:layout_marginBottom="138dp"
+            android:text="End Session" />
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone No  :"
-                android:layout_weight="0"
-                android:layout_marginRight="50dp"
-                android:textSize="17dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/back"
-                android:text="Your Phone No"
-                android:layout_weight="0"
-                android:id="@+id/userPhone"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:textSize="17dp"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="59dp"
-                android:layout_weight="0"
-                android:text="Email       :"
-                android:textSize="17dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="your email"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:background="@drawable/back"
-                android:id="@+id/userEmail"
-                android:textSize="17dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address   :"
-                android:layout_weight="0"
-                android:layout_marginRight="64dp"
-                android:textSize="17dp"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:id="@+id/userAddress"
-                android:padding="10dp"
-                android:textStyle="bold"
-                android:background="@drawable/back"
-                android:layout_weight="0"
-                android:textSize="17dp"
-                />
-
-        </LinearLayout>
-
-        <!--LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="51dp"
-                android:layout_weight="0"
-                android:text="Occupation"
-                android:textSize="17dp" />
-
-            <EditText
-                android:id="@+id/occupationEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/back"
-                android:hint="Enter your occupation"
-                android:padding="10dp"
-                android:textSize="17dp" />
-
-        </LinearLayout-->
+    </RelativeLayout>
 
 
-
-
-    </LinearLayout>
-
-
-    <!-- Save Button -->
-
-
-</RelativeLayout>
-
-
+</androidx.constraintlayout.widget.ConstraintLayout>

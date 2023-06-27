@@ -42,14 +42,14 @@ class HomeActivity : AppCompatActivity() {
         }
 
         contactsIcon.setOnClickListener{
-            val intent = Intent(this, ChatbotActivity::class.java)
+            val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
 
         // Delay showing the chat message for 1 second (1000 milliseconds)
         chatbotIcon.postDelayed({
             showChatMessage()
-        }, 800)
+        }, 1000)
     }
 
     private fun showChatMessage() {
