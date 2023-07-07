@@ -3,13 +3,15 @@ package eu.tutorials.cyberwatch
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import eu.tutorials.cyberwatch.model.User
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var emailEditText: EditText
@@ -20,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var headingText : TextView
     private var isSignupMode = false
     private lateinit var auth: FirebaseAuth
+
+    var db = FirebaseFirestore.getInstance()
+    //private val UsersRef = db.collection("User")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +60,8 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d(TAG, "loginWithEmail:success")
                     Toast.makeText(this, "Successfully logged in!", Toast.LENGTH_SHORT).show()
+                    val currentEmail = auth.currentUser!!.email
+                    updateUI(currentEmail)
                     val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -96,6 +103,33 @@ class LoginActivity : AppCompatActivity() {
             signupTextView.text = "Don't have an account? Sign up"
         }
     }
+    private fun updateUI(email:String?) {
+        if (email != null) {
+            val userRef = db.collection("User").document(email)
+            userRef.get()
+                .addOnSuccessListener { documentSnapshot ->
+                    if (documentSnapshot.exists()) {
+                        val type = documentSnapshot.getString("type")
+                        if (type == "Client") {
+                            val intent = Intent(this, LawyerHome::class.java)
+                            startActivity(intent)
+                        } else {
+                            val intent = Intent(this, HomeActivity::class.java)
+                            startActivity(intent)
+                            //Snackbar.make(findViewById(R.id.main_layout), "Doctor interface entraint de realisation", Snackbar.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // Handle document not found
+                        val intent = Intent(this, FirstSignUpActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    // Handle error
+                }
+        }
+    }
+
 
 
     companion object {

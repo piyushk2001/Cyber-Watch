@@ -48,10 +48,10 @@ class ProfileActivity : AppCompatActivity() {
 
         editProfileBtn = findViewById(R.id.editButton)
         editProfileBtn.setOnClickListener(View.OnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val intent = Intent(applicationContext, EditProfileActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            //FirebaseAuth.getInstance().signOut()
+            //val intent = Intent(applicationContext, EditProfileActivity::class.java)
+            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startEditActivity()
         })
 
     }
@@ -87,5 +87,15 @@ class ProfileActivity : AppCompatActivity() {
                 }
         }
     }
+
+    private fun startEditActivity() {
+        val intent = Intent(this, EditProfileActivity::class.java)
+        intent.putExtra("CURRENT_NAME", userNameTextView.text.toString())
+        intent.putExtra("CURRENT_PHONE", phoneTextView.text.toString())
+        intent.putExtra("CURRENT_ADDRESS", addressTextView.text.toString())
+        startActivity(intent)
+        //finish()
+    }
+
 }
 

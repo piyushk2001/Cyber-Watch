@@ -72,12 +72,16 @@ class FirstSignUpActivity : AppCompatActivity() {
                 val clientHelper = ClientHelper()
                 clientHelper.addClient(fullname, address, tel)
                 println("Add client $fullname to client collection")
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
             } else {
                 val lawyerHelper = LawyerHelper()
                 lawyerHelper.addLawyer(fullname, address, tel, specialite)
+                val intent = Intent(this, LawyerHome::class.java)
+                startActivity(intent)
             }
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this, HomeActivity::class.java)
+            //startActivity(intent)
         }
 
     }
