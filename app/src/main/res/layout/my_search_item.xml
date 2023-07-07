@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/blue" />
+        <TextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="86dp"
+            android:layout_marginTop="2dp"
+            android:text="Email"
+            android:textColor="#B9B9B9" />
+        <TextView
+            android:id="@+id/specialistTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="86dp"
+            android:text="Specialist"
+            android:textColor="#B9B9B9" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="23dp"
+            android:text="Request +"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

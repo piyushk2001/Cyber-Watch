@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         contactsIcon.setOnClickListener{
-            val intent = Intent(this, SearchActivity::class.java)
+            val intent = Intent(this, ClientContactsActivity::class.java)
             startActivity(intent)
         }
 

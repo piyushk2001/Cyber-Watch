@@ -12,6 +12,18 @@
         android:theme="@style/Theme.CyberWatch"
         tools:targetApi="31">
         <activity
+            android:name=".ClientContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatsActivity"
+            android:exported="false" />
+        <activity
             android:name=".LawyerHome"
             android:exported="false" />
         <activity

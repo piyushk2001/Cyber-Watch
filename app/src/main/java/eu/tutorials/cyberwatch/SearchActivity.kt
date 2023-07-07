@@ -41,8 +41,9 @@ class SearchActivity : AppCompatActivity() {
                     val email = document.getString("email")
                     val name = document.getString("name")
                     val tel = document.getString("tel")
+                    val specialite = document.getString("specialite")
 
-                    val lawyer = Lawyer(name, tel, email)
+                    val lawyer = Lawyer(name, tel, email, specialite)
                     lawyers.add(lawyer)
                 }
 
@@ -64,7 +65,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LawyerViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.my_lawyer_item, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.my_search_item, parent, false)
             return LawyerViewHolder(view)
         }
 
@@ -72,8 +73,9 @@ class SearchActivity : AppCompatActivity() {
             val lawyer = lawyers[position]
 
             holder.titleTextView.text = lawyer.name
-            holder.phoneTextView.text = lawyer.phone
+            //holder.phoneTextView.text = lawyer.phone
             holder.emailTextView.text = lawyer.email
+            holder.specialiteTextView.text=lawyer.specialite
         }
 
         override fun getItemCount(): Int {
@@ -82,10 +84,11 @@ class SearchActivity : AppCompatActivity() {
 
         inner class LawyerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
-            val phoneTextView: TextView = itemView.findViewById(R.id.phoneTextView)
+            //val phoneTextView: TextView = itemView.findViewById(R.id.phoneTextView)
             val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
+            val specialiteTextView: TextView = itemView.findViewById(R.id.specialistTextView)
         }
     }
 
-    data class Lawyer(val name: String?, val phone: String?, val email: String?)
+    data class Lawyer(val name: String?, val phone: String?, val email: String?, val specialite: String?)
 }
