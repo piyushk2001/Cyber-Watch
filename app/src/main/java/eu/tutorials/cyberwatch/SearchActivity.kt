@@ -5,16 +5,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class SearchActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var firestore: FirebaseFirestore
     private lateinit var lawyerAdapter: LawyerAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,11 +76,45 @@ class SearchActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: LawyerViewHolder, position: Int) {
             val lawyer = lawyers[position]
 
+            holder.addBtn.setOnClickListener {
+                val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email
+                val lawyerEmail = lawyer.email
+
+                if (currentUserEmail != null && lawyerEmail != null) {
+                    addRequestToLawyer(currentUserEmail, lawyerEmail, holder)
+                }
+            }
+
             holder.titleTextView.text = lawyer.name
             //holder.phoneTextView.text = lawyer.phone
             holder.emailTextView.text = lawyer.email
             holder.specialiteTextView.text=lawyer.specialite
         }
+
+        private fun addRequestToLawyer(userEmail : String, lawyerEmail: String, holder: LawyerViewHolder) {
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            //val userEmail = currentUser?.email
+
+            if (userEmail != null) {
+                val requestsCollection = firestore
+                    .collection("Lawyer")
+                    .document(lawyerEmail)
+                    .collection("requests")
+
+                val requestDocument = requestsCollection.document(userEmail)
+                requestDocument
+                    .set(mapOf<String, Any>())
+                    .addOnSuccessListener {
+                        Toast.makeText(this@SearchActivity, "Request sent successfully", Toast.LENGTH_SHORT).show()
+                        holder.addBtn.text = "Requested"
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this@SearchActivity, "Failed to send request", Toast.LENGTH_SHORT).show()
+                        Log.e("SearchActivity", "Error adding request", e)
+                    }
+            }
+        }
+
 
         override fun getItemCount(): Int {
             return lawyers.size
@@ -87,6 +125,7 @@ class SearchActivity : AppCompatActivity() {
             //val phoneTextView: TextView = itemView.findViewById(R.id.phoneTextView)
             val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
             val specialiteTextView: TextView = itemView.findViewById(R.id.specialistTextView)
+            val addBtn: Button =itemView.findViewById(R.id.addBtn)
         }
     }
 
