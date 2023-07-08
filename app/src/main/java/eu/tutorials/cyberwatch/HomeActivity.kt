@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         documentsIcon.setOnClickListener{
-            val intent = Intent(this, ChatbotActivity::class.java)
+            val intent = Intent(this, DocumentActivity::class.java)
             startActivity(intent)
         }
 

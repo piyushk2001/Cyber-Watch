@@ -22,10 +22,10 @@
             android:layout_marginLeft="87dp"
             android:layout_marginTop="11dp"
             android:maxLines="1"
-            android:textStyle="bold"
             android:text="Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/blue" />
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/phoneTextView"

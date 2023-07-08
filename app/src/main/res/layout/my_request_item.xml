@@ -51,7 +51,7 @@
             android:textColor="#B9B9B9" />
 
         <Button
-            android:id="@+id/messageBtn"
+            android:id="@+id/cancelBtn"
             android:layout_width="33dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
@@ -63,7 +63,7 @@
             android:background="@drawable/baseline_cancel_24"/>
 
         <Button
-            android:id="@+id/callBtn"
+            android:id="@+id/acceptBtn"
             android:layout_width="33dp"
             android:layout_height="34dp"
             android:layout_alignParentStart="true"
