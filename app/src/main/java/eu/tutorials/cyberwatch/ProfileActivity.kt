@@ -122,7 +122,6 @@ class ProfileActivity : AppCompatActivity() {
         if (email != null) {
             val userRef = firestore.collection("User").document(email)
             userRef.get()
-
                 .addOnSuccessListener { documentSnapshot ->
                     if (documentSnapshot.exists()) {
                         val name = documentSnapshot.getString("name")
@@ -139,6 +138,16 @@ class ProfileActivity : AppCompatActivity() {
                     } else {
                         // Handle document not found
                     }
+                }
+                .addOnFailureListener { exception ->
+                    // Handle error
+                }
+            val profilePictureRef = storageRef.child("ProfilePictures/$email")
+            profilePictureRef.downloadUrl
+                .addOnSuccessListener { uri ->
+                    Glide.with(this@ProfileActivity)
+                        .load(uri)
+                        .into(imageview)
                 }
                 .addOnFailureListener { exception ->
                     // Handle error
