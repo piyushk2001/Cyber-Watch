@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DocumentActivity"
-    android:id="@+id/id_show"
     tools:actionBarNavMode="standard"
     android:orientation="vertical">
 
@@ -34,165 +33,51 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <!--androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/serachPatRecycle"
+    <RelativeLayout
+        android:id="@+id/recycleLayout"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" /-->
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp">
+        android:layout_height="600dp">
 
-        <RelativeLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/serachPatRecycle"
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="100dp">
-
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="87dp"
-                android:layout_marginTop="11dp"
-                android:maxLines="1"
-                android:textStyle="bold"
-                android:text="Case file 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/blue" />
-
-            <TextView
-                android:id="@+id/emailTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/titleTextView"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="86dp"
-                android:text="13-06-2022"
-                android:textColor="#B9B9B9" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/emailTextView"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="86dp"
-                android:layout_marginTop="2dp"
-                android:text="13KB"
-                android:textColor="#B9B9B9" />
-
-            <Button
-                android:id="@+id/addBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="23dp"
-                android:text="Open"/>
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp">
-
-        <RelativeLayout
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/ifempty"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="100dp">
-
-            <TextView
-                android:id="@+id/titleTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="87dp"
-                android:layout_marginTop="11dp"
-                android:maxLines="1"
-                android:textStyle="bold"
-                android:text="Case File 2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/blue" />
-
-            <TextView
-                android:id="@+id/emailTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/titleTextView1"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="86dp"
-                android:text="12-06-2022"
-                android:textColor="#B9B9B9" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/emailTextView1"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="86dp"
-                android:layout_marginTop="2dp"
-                android:text="73KB"
-                android:textColor="#B9B9B9" />
-
-            <Button
-                android:id="@+id/addBtn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="23dp"
-                android:text="Open"/>
+            android:layout_height="match_parent"
+            android:text="No documents"/>
 
 
+    </RelativeLayout>
 
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
+    <RelativeLayout
+        app:layout_constraintTop_toBottomOf="@+id/recycleLayout"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
+
 
     <Button
-        android:id="@+id/addBtn3"
+        android:id="@+id/uploadBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
         android:layout_marginStart="40dp"
         android:layout_marginBottom="30dp"
         android:text="Upload"/>
 
     <Button
-        android:id="@+id/addBtn4"
+        android:id="@+id/registerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="290dp"
-        android:text="Delete" />
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="30dp"
+        android:text="Register" />
 
 
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 
 </LinearLayout>
