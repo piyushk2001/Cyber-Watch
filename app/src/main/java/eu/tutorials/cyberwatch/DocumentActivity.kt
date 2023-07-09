@@ -62,7 +62,10 @@ class DocumentActivity : AppCompatActivity() {
         recyclerView.adapter = documentAdapter
 
         uploadBtn.setOnClickListener { uploadDocument() }
-        registerBtn.setOnClickListener { registerDocument() }
+        registerBtn.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         fetchUserDocuments()
     }
