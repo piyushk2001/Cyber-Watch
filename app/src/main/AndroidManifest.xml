@@ -12,6 +12,9 @@
         android:theme="@style/Theme.CyberWatch"
         tools:targetApi="31">
         <activity
+            android:name=".DisplayFileActivity"
+            android:exported="false" />
+        <activity
             android:name=".DocumentActivity"
             android:exported="false" />
         <activity
