@@ -151,6 +151,7 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 .addOnFailureListener { exception ->
                     // Handle error
+                    print(exception)
                 }
         }
     }
