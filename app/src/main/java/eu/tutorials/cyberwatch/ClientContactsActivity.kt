@@ -7,10 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -134,6 +131,11 @@ class ClientContactsActivity : AppCompatActivity() {
                     // Handle error
                     holder.profileImageView.setImageResource(R.drawable.usericon)
                 }
+            holder.messageBtn.setOnClickListener {
+                val intent = Intent(this@ClientContactsActivity, UserOneChatActivity::class.java)
+                intent.putExtra("contactName", contact.name)
+                startActivity(intent)
+            }
         }
 
         override fun getItemCount(): Int {
@@ -145,6 +147,7 @@ class ClientContactsActivity : AppCompatActivity() {
             val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
             val telTextView: TextView = itemView.findViewById(R.id.phoneTextView)
             val profileImageView: ImageView = itemView.findViewById(R.id.imageView3)
+            val messageBtn : Button = itemView.findViewById(R.id.messageBtn)
         }
     }
 

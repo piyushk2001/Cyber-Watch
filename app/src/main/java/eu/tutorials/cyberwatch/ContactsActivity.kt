@@ -1,5 +1,6 @@
 package eu.tutorials.cyberwatch
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -121,6 +122,11 @@ class ContactsActivity : AppCompatActivity() {
                     // Handle error
                     holder.profileImageView.setImageResource(R.drawable.usericon)
                 }
+            holder.messageBtn.setOnClickListener {
+                val intent = Intent(this@ContactsActivity, UserOneChatActivity::class.java)
+                intent.putExtra("contactName", contact.name)
+                startActivity(intent)
+            }
         }
 
         override fun getItemCount(): Int {
@@ -132,6 +138,7 @@ class ContactsActivity : AppCompatActivity() {
             val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
             val telTextView: TextView = itemView.findViewById(R.id.phoneTextView)
             val profileImageView: ImageView = itemView.findViewById(R.id.imageView3)
+            val messageBtn : Button = itemView.findViewById(R.id.messageBtn)
         }
     }
 
