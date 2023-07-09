@@ -6,19 +6,21 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+
 class ContactsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var firestore: FirebaseFirestore
     private lateinit var contactAdapter: ContactAdapter
     private lateinit var ifEmpty: LinearLayout
+    private var storageRef = Firebase.storage.reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contacts)
@@ -108,6 +110,17 @@ class ContactsActivity : AppCompatActivity() {
             holder.nameTextView.text = contact.name
             holder.emailTextView.text = contact.email
             holder.telTextView.text = contact.tel
+            val profilePictureRef = storageRef.child("ProfilePictures/${contact.email}")
+            profilePictureRef.downloadUrl
+                .addOnSuccessListener { uri ->
+                    Glide.with(holder.itemView.context)
+                        .load(uri)
+                        .into(holder.profileImageView)
+                }
+                .addOnFailureListener { exception ->
+                    // Handle error
+                    holder.profileImageView.setImageResource(R.drawable.usericon)
+                }
         }
 
         override fun getItemCount(): Int {
@@ -118,6 +131,7 @@ class ContactsActivity : AppCompatActivity() {
             val nameTextView: TextView = itemView.findViewById(R.id.titleTextView)
             val emailTextView: TextView = itemView.findViewById(R.id.emailTextView)
             val telTextView: TextView = itemView.findViewById(R.id.phoneTextView)
+            val profileImageView: ImageView = itemView.findViewById(R.id.imageView3)
         }
     }
 
