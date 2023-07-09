@@ -2,11 +2,11 @@ package eu.tutorials.cyberwatch.model
 
 class Client {
     var name: String? = null
-    var adresse: String? = null
+    private var adresse: String? = null
     var tel: String? = null
     var email: String? = null
-    var dateNaissance: String? = null
-    var situationFamiliale: String? = null
+    private var dateNaissance: String? = null
+    private var situationFamiliale: String? = null
 
 
     fun constructor() {

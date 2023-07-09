@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CyberWatch</string>
     <string name="chats">Chats</string>
     <string name="empty_no_chats_yet">Empty! No chats yet</string>
     <string name="type_a_message">Type a message...</string>

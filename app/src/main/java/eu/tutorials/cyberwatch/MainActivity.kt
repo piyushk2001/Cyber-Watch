@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
-                val currentEmail = auth.currentUser!!.email
+                val currentEmail = auth.currentUser?.email
                 checkUserAuthentication(currentEmail)
             }
 
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                         navigateToHome() // User document doesn't exist, navigate to HomeActivity
                     }
                 }
-                .addOnFailureListener { exception ->
+                .addOnFailureListener {
                     navigateToHome() // Error occurred, navigate to HomeActivity
                 }
         } else {
