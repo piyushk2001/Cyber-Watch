@@ -111,10 +111,10 @@ class LoginActivity : AppCompatActivity() {
                     if (documentSnapshot.exists()) {
                         val type = documentSnapshot.getString("type")
                         if (type == "Client") {
-                            val intent = Intent(this, LawyerHome::class.java)
+                            val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
                         } else {
-                            val intent = Intent(this, HomeActivity::class.java)
+                            val intent = Intent(this, LawyerHome::class.java)
                             startActivity(intent)
                             //Snackbar.make(findViewById(R.id.main_layout), "Doctor interface entraint de realisation", Snackbar.LENGTH_SHORT).show();
                         }
