@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
-                val currentEmail = auth.currentUser!!.email
+                val currentEmail = auth.currentUser?.email
                 checkUserAuthentication(currentEmail)
             }
 
