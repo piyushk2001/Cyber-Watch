@@ -3,6 +3,7 @@ package eu.tutorials.cyberwatch
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -42,7 +43,14 @@ class LawyerChatsActivity : AppCompatActivity() {
             .post(body)
             .build()
 
-        val response = httpClient.newCall(request).execute()
-        // Handle the response as needed
+        try {
+            val response = httpClient.newCall(request).execute()
+            // Handle the response as needed
+        } catch (e: Exception) {
+            runOnUiThread {
+                // Display an error message to the user
+                Toast.makeText(applicationContext, "Can't connect to the server", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
