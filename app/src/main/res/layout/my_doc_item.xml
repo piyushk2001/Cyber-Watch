@@ -42,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/emailTextView"
+            android:id="@+id/phoneTextView"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginStart="27dp"
@@ -49,17 +50,17 @@
             android:layout_marginTop="2dp"
             android:text="13KB"
             android:textColor="#B9B9B9" />
-
-        <Button
-            android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/openBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="23dp"
-            android:text="Open"/>
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/baseline_remove_red_eye_24"/>
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
