@@ -130,7 +130,7 @@
                     android:textSize="16sp"
                     android:textColor="@color/blue"
                     android:background="@drawable/back"
-                    android:text="Documents" />
+                    android:text="My Contacts" />
 
             </LinearLayout>
         </LinearLayout>

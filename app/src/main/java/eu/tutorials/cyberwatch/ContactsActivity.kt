@@ -123,7 +123,10 @@ class ContactsActivity : AppCompatActivity() {
                     holder.profileImageView.setImageResource(R.drawable.usericon)
                 }
             holder.messageBtn.setOnClickListener {
-                val intent = Intent(this@ContactsActivity, UserOneChatActivity::class.java)
+                val intent = Intent(this@ContactsActivity, ChatActivity::class.java)
+                val currentUserEmail = FirebaseAuth.getInstance().currentUser?.email
+                intent.putExtra("senderEmail", currentUserEmail)
+                intent.putExtra("receiverEmail", contact.email)
                 intent.putExtra("contactName", contact.name)
                 startActivity(intent)
             }

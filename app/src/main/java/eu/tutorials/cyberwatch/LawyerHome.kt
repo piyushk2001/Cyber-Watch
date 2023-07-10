@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class LawyerHome : AppCompatActivity() {
-    private lateinit var lawyerChats: ImageView
+    //private lateinit var lawyerChats: ImageView
     private lateinit var profileIcon: ImageView
     private lateinit var contactsIcon: ImageView
     private lateinit var requestsIcon: ImageView
@@ -15,15 +15,11 @@ class LawyerHome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_home)
 
-        lawyerChats=findViewById(R.id.lawyers_chat)
+        //lawyerChats=findViewById(R.id.lawyers_chat)
         profileIcon=findViewById(R.id.profile_icon)
         contactsIcon=findViewById(R.id.contacts_icon)
         requestsIcon=findViewById(R.id.requests_icon)
 
-        lawyerChats.setOnClickListener {
-            val intent = Intent(this, ChatsActivity::class.java)
-            startActivity(intent)
-        }
 
         profileIcon.setOnClickListener{
             val intent = Intent(this, ProfileActivity::class.java)
