@@ -31,7 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".LawyerChatsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LawyerHome"
             android:exported="false" />
@@ -56,6 +56,9 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".UserChatsActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

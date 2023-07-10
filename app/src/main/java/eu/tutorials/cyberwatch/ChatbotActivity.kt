@@ -1,4 +1,5 @@
 package eu.tutorials.cyberwatch
+import android.content.Intent
 
 import android.os.Bundle
 import android.util.Log
@@ -51,7 +52,8 @@ class ChatbotActivity : AppCompatActivity() {
 
                 binding.tvResponse.setOnClickListener {
                     // TODO: Redirects to user chat functionality
-                    // You can open a new activity or fragment for lawyer chat here
+                    val intent = Intent(this, UserChatsActivity::class.java)
+                    startActivity(intent)
                 }
             }
         )
