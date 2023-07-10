@@ -27,7 +27,7 @@ class ChatbotActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-        val url = "http://192.168.1.50:5000/chat"
+        val url = "http://0.0.0.0:5000/chat"
         val requestQueue = Volley.newRequestQueue(this)
 
         val requestBody = JSONObject()

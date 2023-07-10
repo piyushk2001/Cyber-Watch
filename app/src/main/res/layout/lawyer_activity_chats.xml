@@ -1,49 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvHeading"
+        android:id="@+id/chat_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lawyer Chat System"
+        android:text="Lawyer Chats"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tvHeading"
+        android:gravity="center"
         android:padding="16dp" />
+
+    <ListView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="16dp">
 
         <EditText
-            android:id="@+id/etMessage"
+            android:id="@+id/message_input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:drawable/editbox_background_normal"
-            android:hint="Enter message"
+            android:hint="Type a message"
             android:maxLines="1"
-            android:padding="8dp" />
+            android:imeOptions="actionSend" />
 
         <Button
-            android:id="@+id/btnSend"
+            android:id="@+id/send_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send"
-            android:padding="8dp" />
+            android:text="Send" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
