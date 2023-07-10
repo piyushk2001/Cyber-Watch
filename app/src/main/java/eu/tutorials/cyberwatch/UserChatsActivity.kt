@@ -3,9 +3,9 @@ package eu.tutorials.cyberwatch
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class ChatsActivity : AppCompatActivity() {
+class UserChatsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chats)
+        setContentView(R.layout.user_activity_chats)
     }
 }

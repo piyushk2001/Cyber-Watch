@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.TextView
 
 class LawyerHome : AppCompatActivity() {
     private lateinit var lawyerChats: ImageView
@@ -21,7 +20,7 @@ class LawyerHome : AppCompatActivity() {
         requestsIcon=findViewById(R.id.requests_icon)
 
         lawyerChats.setOnClickListener {
-            val intent = Intent(this, ChatsActivity::class.java)
+            val intent = Intent(this, LawyerChatsActivity::class.java)
             startActivity(intent)
         }
 

@@ -26,7 +26,7 @@ class ChatbotActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(message: String) {
-        val url = "http://localhost:5000/chat"
+        val url = "http://192.168.1.50:5000/chat"
         val requestQueue = Volley.newRequestQueue(this)
 
         val requestBody = JSONObject()
@@ -41,9 +41,22 @@ class ChatbotActivity : AppCompatActivity() {
             },
             { error ->
                 Log.e("Chatbot Error", error.toString())
+
+                // Display apology message and lawyer chat option
+                val apologyMessage = "Apologies! We can't resolve your query."
+                val lawyerOption = "Chat with a lawyer"
+                val errorMessage = "$apologyMessage\n\n$error\n\n$lawyerOption"
+
+                binding.tvResponse.text = errorMessage
+
+                binding.tvResponse.setOnClickListener {
+                    // TODO: Redirects to user chat functionality
+                    // You can open a new activity or fragment for lawyer chat here
+                }
             }
         )
 
         requestQueue.add(jsonObjectRequest)
     }
+
 }
